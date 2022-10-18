@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="mainPage">
+      <h1>Tic-tac-toe</h1>
+      <div class="currentRes">
+        <div class="currentRes">Winner</div>
+        <div id="currentWinner"></div>
+      </div>
+      <div id="ticTac">
+        <div class="cell" id="cell1"></div>
+        <div class="cell" id="cell2"></div>
+        <div class="cell" id="cell3"></div>
+        <div class="cell" id="cell4"></div>
+        <div class="cell" id="cell5"></div>
+        <div class="cell" id="cell6"></div>
+        <div class="cell" id="cell7"></div>
+        <div class="cell" id="cell8"></div>
+        <div class="cell" id="cell9"></div>
+      </div>
+      <div class="allRes">
+        <h2 id="resH2">Win score</h2>
+        <div id="userX">Player X:</div>
+        <div id="userO">Player O:</div>
+        <div id="scoreX">0</div>
+        <div id="scoreO">0</div>
+
+        <button class="btn" id="delScore">Clear</button>
+      </div>
+      <button class="btn" id="newGame">New game</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

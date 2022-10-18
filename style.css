@@ -1,0 +1,135 @@
+.mainPage{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    width: 800px;
+
+}
+
+body{
+    background-color: #87cefa;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+#ticTac{
+    display: grid;
+    position: relative;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 300px;
+    width: 300px;
+    
+    font-family: 'Lato', sans-serif;
+    
+}
+
+.cell{
+    border: 1px solid  #74B6F7;
+    text-align: center;
+    font-size: 650%;
+    height: 98px;
+    width: 98px;
+    line-height: 98px;
+}
+
+.cell:hover{
+    border: 1px solid #1d49aa;
+}
+
+h1{
+    
+    grid-column-start: 1 ;
+    grid-column-end: 4;
+    
+    text-align: center;
+}
+
+.currentRes{
+    text-align: center;
+    font-size: 20px;
+    padding: 8px;
+    background-color: #74B6F7;
+    border-radius: 4px;
+    
+}
+
+.allRes{
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: #74B6F7;
+    border-radius: 4px;
+    
+}
+
+#newGame{
+    
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+h2{
+    font-size: 20px;
+    text-align: center;
+    
+    
+    
+}
+
+#resH2{
+    grid-area: 1/1/2/3;
+}
+
+#userX{
+    grid-area: 2/1/3/2;
+    padding: 5px;
+}
+
+#userO{
+    grid-area: 3/1/4/2;
+    padding: 5px;
+}
+
+#scoreX{
+    grid-area: 2/2/3/3;
+    padding: 5px;
+}
+
+#scoreO{
+   grid-area:  3/2/4/3;
+   padding: 5px;
+}
+
+#delScore{
+    margin: auto;
+    text-align: center;
+    width: 100px;
+    height: 20px;
+    grid-area: 4/1/5/2;
+}
+
+
+.btn{
+    font-family: inherit;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #4676D7;
+    color: black;
+    padding: auto;
+    
+}
+
+.btn:hover {
+    background: #1d49aa;
+  }
+  
+  
+ .btn:active {
+    outline: none;
+    box-shadow: 0 0 0 2px blue;
+  } 
