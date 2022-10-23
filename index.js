@@ -14,7 +14,7 @@ let currentWinner = document.getElementById("currentWinner");
 
 let filledCells = 0;
 
-let delScoreBtn = document.getElementById("delScore");
+let clearScoreBtn = document.getElementById("clearScore");
 
 let newGameBtn = document.getElementById("newGame");
 
@@ -24,14 +24,16 @@ let winCounter = 0;
 
 let winFlag = true;
 
-function delScore() {
+
+
+function clearScore() {
   scoreO = 0;
   scoreX = 0;
   scoreX_div.textContent = "0";
   scoreO_div.textContent = "0";
 }
 
-delScoreBtn.addEventListener("click", delScore);
+clearScoreBtn.addEventListener("click", clearScore);
 
 function newGame() {
   for (const child of ticTac.children) {
@@ -54,7 +56,9 @@ let matrix = [
   [9, 10, 11],
 ];
 
-function idToNmb(id) {
+const equalToWin = matrix.length - 1 
+
+function idToNumber(id) {
   id = id.split("");
   id = id.filter((item) => item > 0);
 
@@ -62,7 +66,7 @@ function idToNmb(id) {
 }
 
 function fillMtx(element, mtx, id) {
-  let nmbrId = idToNmb(id);
+  let nmbrId = idToNumber(id);
 
   if (1 <= nmbrId && nmbrId <= 3) {
     mtx[0][nmbrId - 1] = element;
@@ -73,7 +77,7 @@ function fillMtx(element, mtx, id) {
   }
 }
 
-function handler(event) {
+function onClickHandler(event) {
   if (event.target.textContent == "" && winFlag) {
     if (playerTurn) {
       event.target.textContent = "X";
@@ -97,7 +101,7 @@ function handler(event) {
   }
 }
 
-ticTac.addEventListener("click", handler);
+ticTac.addEventListener("click", onClickHandler);
 
 function winner(arr) {
   if (arr[0].textContent == "X") {
@@ -136,7 +140,7 @@ function checker(arr) {
       ) {
         fillWinCells(winCells, arr[i][j], arr[i][j + 1]);
         winCounter += 1;
-        if (winCounter == 2) {
+        if (winCounter == equalToWin) {
           winFlag = false;
           return winner(winCells);
         }
@@ -162,7 +166,7 @@ function checker(arr) {
 
           index2 += 1;
 
-          if (winCounter == 2) {
+          if (winCounter == equalToWin) {
             winFlag = false;
 
             return winner(winCells);
@@ -190,7 +194,7 @@ function checker(arr) {
 
           fillWinCells(winCells, arr[i][j], arr[i + 1][j + 1]);
           j += 1;
-          if (winCounter == 2) {
+          if (winCounter == equalToWin) {
             winFlag = false;
             return winner(winCells);
           }
@@ -218,7 +222,7 @@ function checker(arr) {
           fillWinCells(winCells, arr[i][j], arr[i + 1][j - 1]);
           j -= 1;
 
-          if (winCounter == 2) {
+          if (winCounter == equalToWin) {
             winFlag = false;
 
             return winner(winCells);
